@@ -1,9 +1,7 @@
-# iteration 1: basic times tables.
-# iteration 2: add a timer and time limit.
-# iteration 4: add ability to choose what times tables I want to include. <-- use random.sample()
-# iteration 3: add csv file storage to track times.
-# iteration 5: add division too.
-# iteration 6: add addition and subtraction.
+# TODO: add ability to interrupt the loop at the exact moment the timer runs out. <-- use the signal module.
+# TODO: add csv file storage to track times.
+# TODO: add division too.
+# TODO: add addition and subtraction.
 
 import random
 import time
@@ -28,19 +26,19 @@ while (userInput != 'q' and time.time() < endTime):
 
     print(f"{a} x {b} = ")
 
-    start = time.time()
+    questionStartTime = time.time()
 
     userInput = input()
     if (userInput != 'q'):
         total += 1
         formattedInput = int(userInput)
 
-        end = time.time()
+        questionEndTime = time.time()
 
         if (formattedInput != answer):
             print(f'wrong... answer: {answer}\n')
         else:
             score += 1
-            print(f"time: {end - start}")
+            print(f"time: {questionEndTime - questionStartTime}")
 
 print(f"\nTimes up! You scored {score} out of {total}")
