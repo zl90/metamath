@@ -12,15 +12,17 @@ random.seed()
 
 userInput = ''
 
-while (userInput != 'q'):
-    a = random.randint(3, 12)
-    b = random.randint(3, 12)
+timeLimitInSeconds = 60
+startTime = time.time()
+endTime = startTime + timeLimitInSeconds
 
-    while (a % 10 == 0):
-        a = random.randint(3, 12)
+timesTables = [2, 3, 4, 5, 6, 7, 8, 9, 11, 12]
+score = 0
+total = 0
 
-    while (b % 10 == 0):
-        b = random.randint(3, 12)
+while (userInput != 'q' and time.time() < endTime):
+    a = random.sample(timesTables, 1)[0]
+    b = random.sample(timesTables, 1)[0]
 
     answer = a * b
 
@@ -30,11 +32,15 @@ while (userInput != 'q'):
 
     userInput = input()
     if (userInput != 'q'):
+        total += 1
         formattedInput = int(userInput)
 
         end = time.time()
 
         if (formattedInput != answer):
             print(f'wrong... answer: {answer}\n')
+        else:
+            score += 1
+            print(f"time: {end - start}")
 
-        print(f"time: {end - start}")
+print(f"\nTimes up! You scored {score} out of {total}")
