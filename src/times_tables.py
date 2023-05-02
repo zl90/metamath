@@ -1,5 +1,5 @@
 # TODO: add ability to interrupt the loop at the exact moment the timer runs out. <-- use the signal module.
-# TODO: add csv file storage to track times.
+# TODO: add csv file storage to track times. (2 files, one to track scores, one to track individual question times)
 # TODO: add division too.
 # TODO: add addition and subtraction.
 
