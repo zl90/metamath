@@ -24,7 +24,7 @@ while (userInput != 'q' and time.time() < endTime):
 
     answer = a * b
 
-    print(f"{a} x {b} = ")
+    print(f"{a} x {b} = ", end='')
 
     questionStartTime = time.time()
 
@@ -39,6 +39,7 @@ while (userInput != 'q' and time.time() < endTime):
             print(f'wrong... answer: {answer}\n')
         else:
             score += 1
-            print(f"time: {questionEndTime - questionStartTime}")
+            print(
+                f"time: {round((questionEndTime - questionStartTime),2)}s")
 
 print(f"\nTimes up! You scored {score} out of {total}")
